@@ -6,12 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
-    "react": "19.0.0-rc-66855b96-20241106",
+    "@netlify/plugin-nextjs": "^5.8.1",
+    "@reduxjs/toolkit": "^2.4.0",
+    "axios": "^1.7.8",
+    "next": "15.0.3",
+    "react": "^19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react-icons": "^5.3.0",
+    "react-redux": "^9.1.2",
+    "react-slick": "^0.30.2",
+    "sass": "^1.81.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -1,0 +1,51 @@
+@import "../../mixin";
+@import "../../color";
+.container {
+  @include flexStyle(space-around, center);
+  background-color: $footerBgColor;
+  padding: 30px 0;
+  .about {
+    p {
+      width: 300px;
+      text-align: justify;
+    }
+  }
+  ul {
+    list-style: none;
+
+    flex-direction: column;
+    li {
+      margin: 10px 0;
+      cursor: pointer;
+      &:hover{
+        color: #b6713e;
+      }
+    }
+  }
+  .socialMedia {
+    ul {
+      @include flexStyle(center, center);
+      flex-direction: row;
+    }
+    li {
+      background-color: white;
+      border-radius: 50%;
+      padding: 8px;
+      margin: 10px 5px;
+      display: flex;
+      box-shadow: 5px 5px 10px $borderColor;
+      &:hover{
+        background-color: #b6713e;
+      }
+      &:hover .footerIcon{
+        color: white;
+      }
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .container{
+    flex-wrap: wrap;
+    align-items: baseline !important;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../mixin";
+@import "../color";
+.container {
+  @include flexStyle(space-around, center);
+  border: 1px solid $borderColor;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100px;
+  }
+}

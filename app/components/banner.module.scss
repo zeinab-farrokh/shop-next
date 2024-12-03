@@ -1,0 +1,65 @@
+@import "../mixin";
+@import "../color";
+.sliderItem {
+  @include flexStyle(center,center);
+  width: 100%;
+  overflow: hidden;
+
+  div {
+    flex-basis: auto;
+    height: 100vh;
+  }
+  .bannerText {
+    @include flexStyle(space-evenly,center);
+    text-align: center;
+    flex-direction: column;
+    background-color: $sliderBgColor;
+    padding: 1.5rem;
+
+    h1 {
+      font-weight: 500;
+
+    }
+    p{
+      width: 350px;
+      margin: 20px 0;
+    }
+  }
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: $btnColor;
+    background-color: $btnBgColor;
+    transition: .2s ease-in;
+    &:hover{
+      background-color: $btnHoverbgColor;
+      color: $btnHoverColor;
+    }
+  }
+}
+
+@media screen and (max-width:950px) {
+  .sliderItem {
+    flex-direction: column;
+    div{
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    .bannerText{
+      p{
+        
+        margin: 50px 0 30px 0;
+      }
+    }
+  }
+}

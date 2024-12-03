@@ -1,0 +1,145 @@
+@import "../../mixin";
+@import "../../color";
+.navbar {
+  @include flexStyle(space-between, center);
+  align-items: none;
+  padding: 0 20px;
+  border-bottom: 1px solid $borderColor;
+  ul {
+    @include flexStyle(center, center);
+    list-style: none;
+
+    li {
+      margin: 0 15px;
+      color: $primaryColor;
+      &:nth-child(2),
+      &:nth-child(3) {
+        position: relative !important;
+        &:hover {
+          .megaMenu {
+            visibility: visible;
+            margin-top: 15px;
+          }
+          .arrowDown {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .arrowDown {
+        position: absolute;
+        top: 6px;
+      }
+      .megaMenu {
+        background-color: $primaryBgColor;
+        visibility: hidden;
+        position: fixed;
+        border-top: 1px solid $borderColor;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        margin-top: 25px;
+
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    a {
+      @include flexStyle(center, center);
+
+      padding: 20px 0;
+      &:hover {
+        color: $primaryHoverColor;
+      }
+    }
+    .showIcon,
+    .hideIcon {
+      margin-right: 3px;
+    }
+    .showIcon {
+      display: none;
+    }
+  }
+  .icons {
+    a {
+      margin: 0 5px;
+      position: relative;
+    }
+    span {
+      text-align: center;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: $badgeBgColor;
+      color: $badgeColor;
+      right: -8px;
+      top: -13px;
+      font-size: 12px;
+      font-style: normal;
+      padding: 1px;
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .navbar {
+    padding: 10px;
+    ul {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      z-index: 999;
+      background-color: white;
+      width: 100%;
+      flex-direction: column;
+
+      li {
+        padding: 10px;
+        text-align: center;
+        &:nth-child(2),
+        &:nth-child(3) {
+          &:hover .megaMenu {
+            display: flex !important;
+            width: fit-content;
+          }
+        }
+        .arrowDown {
+          top: 15px !important;
+        }
+      }
+      a {
+        padding: 0 !important;
+      }
+      .megaMenu {
+        position: relative !important;
+        display: none !important;
+        visibility: visible !important;
+        top: 0;
+      }
+    }
+  }
+  .icons {
+    span {
+      top: -3px !important;
+    }
+  }
+  .menuIcon {
+    display: flex;
+  }
+
+  .hide {
+    display: none;
+  }
+  .icons {
+    display: flex;
+  }
+}
+@media screen and (min-width: 951px) {
+  .menuIcon {
+    display: none;
+  }
+  .navbar {
+    position: relative;
+  }
+  .show {
+    display: flex;
+  }
+}

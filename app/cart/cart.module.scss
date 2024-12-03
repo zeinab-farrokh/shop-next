@@ -1,0 +1,40 @@
+@import "../mixin";
+@import "../color";
+.container {
+  @include flexStyle(space-around, center);
+  width: 100%;
+  min-height: 50vh;
+  .totalBox,.cartItems{
+      box-shadow: 1px 1px 10px $borderColor;
+      padding: 30px;
+      width: 50%;
+      margin: 10px;
+  }
+  button {
+    border: none;
+    background-color: $btnBgColor;
+    &:hover {
+      background-color: $btnHoverbgColor;
+      color: $btnHoverColor;
+    }
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 950px) {
+    .container{
+        flex-direction: column;
+        margin: 30px 0;
+    }
+    .totalBox,.cartItems{
+        width: 100% !important;
+    }
+    .totalBox{
+        order: 2;
+    }
+    .cartItems{
+        order: 1;
+    }
+}

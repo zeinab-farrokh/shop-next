@@ -1,0 +1,77 @@
+@import "../mixin";
+@import "../color";
+.container {
+  @include flexStyle(center, center);
+  width: 100%;
+  img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease-in;
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+  .firstImgPart {
+    width: 50%;
+
+    height: 100vh;
+    overflow: hidden;
+  }
+  .secondImgPart {
+    @include flexStyle(center, center);
+    width: 50%;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .thirdtextPart {
+    @include flexStyle(center, center);
+    flex-direction: column;
+    background-image: url("/images/group-4.webp");
+    padding: 20px;
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    p {
+      color: $primaryColor;
+      font-size: 0.9rem;
+      width: 450px;
+      margin: 10px 0;
+    }
+  }
+  .fourthImgPart {
+    @include flexStyle(center, center);
+    height: 50%;
+    width: 100%;
+    div {
+      overflow: hidden;
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .container {
+    flex-direction: column;
+  }
+  .firstImgPart{
+    display: flex;
+  }
+  .firstImgPart,
+  .secondImgPart {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .fourthImgPart,.thirdtextPart {
+    height: auto !important;
+  }
+  .fourthImgPart{
+    div{
+      display: flex;
+    }
+  }
+  .thirdtextPart{
+    p{
+      width: 250px !important;
+    }
+  }
+}

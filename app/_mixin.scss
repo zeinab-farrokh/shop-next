@@ -1,0 +1,6 @@
+@mixin flexStyle($justifyAmount,$alignAmount) {
+  display: flex !important;
+  justify-content: $justifyAmount;
+  align-items: $alignAmount;
+  @content;
+}

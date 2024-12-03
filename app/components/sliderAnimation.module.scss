@@ -1,0 +1,32 @@
+@import "../mixin";
+@import "../color";
+.container {
+  background-color: $animationBgColor;
+  padding: 30px 0;
+  ul {
+    @include flexStyle(center, center);
+    animation: circle 20s linear infinite;
+
+    li {
+      margin: 0 30px;
+    }
+  }
+}
+@keyframes circle {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+@keyframes bcircle {
+    100% {
+      transform: translateX(-100%);
+    }
+    0% {
+      transform: translateX(100%);
+    }
+  
+  }

@@ -1,0 +1,75 @@
+@import "../mixin";
+@import "../color";
+.container {
+  margin: 50px 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h3 {
+    cursor: pointer;
+  }
+  .itemsContainer {
+    @include flexStyle(center, center);
+  }
+  .instagramItems {
+    margin: 0 20px;
+    width: 400px;
+    height: 100%;
+  }
+  .instagram {
+    transform: rotate(-120deg);
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.4s ease-in;
+  }
+  .instagramImg {
+    height: 50%;
+    position: relative !important;
+
+    &:hover img {
+      filter: blur(1.3px);
+    }
+    &:hover .instagram {
+      visibility: visible;
+      transform: rotate(0);
+    }
+  }
+  .instagramText {
+    height: 50%;
+    a{
+        font-weight: 500;
+        margin-top: 10px;
+        @include flexStyle(start, center);
+        &:hover .arrow{
+            transform: rotate(0);
+            color:$linkHoverColor ;
+        }
+        &:hover{
+            color:$linkHoverColor;
+        }
+    }
+    .arrow{
+        transform: rotate(40deg);
+       margin-right: 2px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 950px) {
+  .itemsContainer{
+    flex-wrap: wrap;
+  }
+  .instagramItems{
+    margin: 20px 0 !important;
+  }
+}
